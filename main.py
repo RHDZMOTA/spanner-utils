@@ -29,10 +29,14 @@ def main(instance_id, database_id, table_id, file_path, format_path=None, chunks
 
     if chunksize < 0:
         file = get_file(file_path, format_path)
+        print("[Single batch] Importing file into spanner...")
         run_bash_query(db, table_id, file)
     else:
+        counter = 1
         for file in get_file(file_path, format_path, chunksize):
+            print("[Batch %s] Importing chunk into spanner..." % str(counter))
             run_bash_query(db, table_id, file)
+            counter += 1
 
 
 if __name__ == "__main__":

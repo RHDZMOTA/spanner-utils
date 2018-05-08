@@ -36,7 +36,7 @@ Where:
     TABLE_ID    : Cloud Spanner table id.
     FILE_PATH   : Cloud Spanner path to csv file (note that headers are required).
     FORMAT_PATH : JSON file that contains the dtype info e.g. {"STRING_COL": "object", "INT64_COL": "int64"}.
-    CHUNKSIZE   : Number of lines to read per upload (use -1 to read the file in one iteration). 
+    CHUNKSIZE   : Number of lines to read per upload (use -1 to read the file in one iteration, recommended: 1000). 
 ```
 
 ### Download csv-files from spanner
